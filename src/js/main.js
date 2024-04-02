@@ -62,14 +62,16 @@ let participantes = [
 ];
 
 const criarNovoParticipante = (participante) => {
+    const dataInscricao = dayjs(Date.now()).to(participante.dataInscricao)
+    const dataCheckIn = dayjs(Date.now()).to(participante.dataCheckIn)
     return `
     <tr>
         <td>
             <strong>${participante.nome}</strong><br>
             <small>${participante.email}</small>
         </td>
-        <td>${participante.dataInscricao}</td>
-        <td>${participante.dataCheckIn}</td>
+        <td>${dataInscricao}</td>
+        <td>${dataCheckIn}</td>
     </tr>
     `;
 };
