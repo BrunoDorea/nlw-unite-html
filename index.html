@@ -9,6 +9,12 @@
     <link rel='shortcut icon' href='./src/assets/logo.svg' type='image/svg' />
     <!-- CSS -->
     <link rel='stylesheet' href='./src/css/style.css' />
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <!-- DAYJS -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
@@ -31,29 +37,46 @@
 </head>
 
 <body>
-    <form onsubmit="adicionarParticipante(event)">
-        <fieldset>
-            <legend>Inscrição</legend>
+    <div class="container">
+
+        <header>
+            <img src="/src/assets/logo.svg" alt="Logo">
+        </header>
+
+        <form onsubmit="adicionarParticipante(event)">
+            <fieldset>
+                <legend>Inscrição</legend>
+                <div>
+                    <div class="input-wrapper">
+                        <img src="/src/assets/user.svg" alt="">
+                        <input type="text" placeholder="Nome Completo" name="nome" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <img src="/src/assets/mail.svg" alt="">
+                        <input type="email" placeholder="Email" name="email" required>
+                    </div>
+                    <button>Realizar Inscrição</button>
+                </div>
+            </fieldset>
+        </form>
+
+        <section class="lista-participantes">
+            <h2>Participantes</h2>
+
             <div>
-                <input type="text" placeholder="Nome Completo" name="nome" required>
-                <input type="email" placeholder="Email" name="email" required>
-                <button>Realizar Inscrição</button>
+                <table width="100%">
+                    <thead style="text-align: left">
+                        <tr>
+                            <th>Participante</th>
+                            <th>Data da inscrição</th>
+                            <th>Data do check-in</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
-        </fieldset>
-    </form>
-
-    <table width="100%">
-        <thead style="text-align: left">
-            <tr>
-                <th>Participante</th>
-                <th>Data da inscrição</th>
-                <th>Data do check-in</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
+        </section>
+    </div>
 </body>
 
 </html>
